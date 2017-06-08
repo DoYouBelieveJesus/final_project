@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title> sds </title>
@@ -20,15 +21,8 @@
             Lucky draw
         </div>
         <div class="gamerules">
-
         </div>
-
-
-
-
     </div>
 </div>
-
-
 </body>
 </html>
