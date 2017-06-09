@@ -9,7 +9,7 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body class="container-fluid">
+<body class="fluid-container">
 @include('layout.navbar')
        <table class="searchbarcontainer">
         <tbody>

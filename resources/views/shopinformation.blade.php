@@ -11,21 +11,22 @@
 </head>
 <body class="fluid-container">
  @include('layout.navbar')
- <div class="col-md-offset-3 col-md-6">
+ <div class="col-md-offset-4 col-md-4">
 <h1>店家名稱</h1>
 <table id="commentcontainer">
     <tbody>
-        <tr><th colspan="2">留言</th></tr>
+        <tr><th>留言</th></tr>
         @for($i=0;$i<3;$i++)
     
-        <tr><td  colsapn="2">留言者</td></tr>
-        <tr><td>commenter</td><td style="width:20%">time</td></tr>
+        <tr><td>留言者</td></tr>
+        <tr><td style="height:70px">comment</td></tr>
+        <tr><td>time</td></tr>
         @endfor
-        <tr><td colspan="2">留言<td></tr>
+        <tr><td>留言<td></tr>
         <tr>
-            <td colspan="2">
+            <td>
             <form action="" type="" id="comment">
-                <textarea rows="1" cols="96"></textarea>
+                <textarea></textarea>
             </from>
             </td>
 
