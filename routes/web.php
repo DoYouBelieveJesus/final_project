@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('main');
 });
+Route::get('/shop',function() {
+    return view('showshop');
+});
+Route::get('/aboutshop',function() {
+    return view('shopinformation');
+});
+Route::get('/import',function() {
+    return view('importshop');
+});
+
+

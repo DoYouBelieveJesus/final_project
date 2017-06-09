@@ -36,6 +36,27 @@ html, body{
     font-size:50px;
     font-family:Microsoft JhengHei;
 }
+#showshop{
+    margin:auto;
+    text-align:center;
+    width: 50%;
+    font-family:Microsoft JhengHei;
+    border: 1px solid black;
+}
+#showshop th, td, tr{
+    text-align:center;
+}
+#commentcontainer{
+    width:100%;
+}
+#commentcontainer td, tr{
+    /*border:1px solid black;*/
+    text-align:left;
+    height:50px;
+}
+#commentcontainer textarea{
+    resize:none;
+}
 
 
 #custom-search-input{
