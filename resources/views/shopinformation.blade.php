@@ -25,9 +25,11 @@
         <tr><td>留言<td></tr>
         <tr>
             <td>
-            <form action="" type="" id="comment">
-                <textarea></textarea>
-            </from>
+                 <form action="" type="post" id="comment" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                <textarea name="commentword"></textarea>
+                </form>
+            
             </td>
 
         </tr>

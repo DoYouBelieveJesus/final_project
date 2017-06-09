@@ -50,7 +50,7 @@ html, body{
     width:100%;
 }
 #commentcontainer td, tr{
-    /*border:1px solid black;*/
+   /* border:1px solid black;*/
     text-align:left;
     height:30px;
 }
@@ -60,51 +60,50 @@ html, body{
     width:100%;
     height:100%;
 }
-#importshop{
-   width:100%;
+#commentcontainer textarea:focus{
+    outline:0;
 }
-#importshop th{
+#importshopselector{
+   width:100%;
+   text-align:center;
+}
+#importshopselector th{
     height:50px;
     font-size:15px;
     text-align: center;
+    border:none;
 }
-/*
-#test td, tr{
-   border:1px solid black;
-   text-align: left;
-    height:40px;
-}*/
-#importshop td, tr{
- /*  border:1px solid black;*/
+
+
+#importshopselector td, tr{
+    border:none;
    text-align: center;
     height:40px;
 }
-#importshop input[type="number"]{
-    width:40px;
-}
 
-#importshop input[type="text"] {
+
+
+#importshopselector input[type="text"] {
     padding: 0px 10px;
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
-  /*width:220px;*/
   width: 80%;
-  text-align:center;
+  text-align:left;
 }
-#importshop input[type="text"]:focus,
-#importshop input[type="text"].focus {
+#importshopselector input[type="text"]:focus,
+#importshopselector input[type="text"].focus {
   border-bottom: solid 2px #969696;
   outline:0;
 }
-#importshop input[type="number"] {
+#importshopselector input[type="number"] {
    padding: 10px;
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
-  width:18.5%;
+  width:18%;
 }
-#importshop input[type="number"]:focus{
+#importshopselector input[type="number"]:focus{
     outline:0;
     border-bottom:solid 2px #969696;
 }
