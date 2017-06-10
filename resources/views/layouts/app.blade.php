@@ -43,13 +43,14 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;<li><a href="/shop">目前店家</a></li>
-                        <li><a href="/import">輸入店家</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        &nbsp;
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href={{url('shop')}}>目前店家</a></li>
+                        <li><a href={{url('import')}}>輸入店家</a></li>
+                        <li><a href="/about">About Us</a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
