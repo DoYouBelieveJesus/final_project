@@ -33,22 +33,15 @@
             :<input type="number" name="minto" min="0" max="60" form="importshop">
     </td></tr>
     <tr><td>粉專/官網</td><td><input type="text" name="website" form="importshop"></td></tr>
-    <tr><th colspan="2">食物</th></tr>
-    <tr><td>項目</td><td><input type="text" name="food[0][name]" placeholder="名稱" style="width:60%" form="importshop">
-                    <input type="text" name="food[0][price]" placeholder="價格" style="width:20%" form="importshop"></td></tr>
-    <tr><td>項目</td><td><input type="text" name="food[1][name]" placeholder="名稱" style="width:60%" form="importshop">
-                    <input type="text" name="food[1][price]" placeholder="價格" style="width:20%" form="importshop"></td></tr>
-    <tr><td>項目</td><td><input type="text" name="food[2][name]" placeholder="名稱" style="width:60%" form="importshop">
-                    <input type="text" name="food[2][price]" placeholder="價格" style="width:20%" form="importshop"></td></tr>
-    
     </tbody>
 </table>
     <table id="importshopselector">
         <tbody>
         <col width="50%"><col width="50%">
         <tr>
-                <td><button onclick="addrow()" class="addrowbutton">增加食物</button></td>    
-                <td><input type="submit" class="addrowbutton" value="提交" form="importshop"></td>
+               <td><button onclick="window.location='{{URL::to('/shop')}}'" class="addrowbutton">取消</button></td>
+                <td>    
+                    <input type="submit" class="addrowbutton" value="提交/輸入食物" form="importshop"></td>
         </tr>
         </tbody>                    
     </table>

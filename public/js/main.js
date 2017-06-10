@@ -1,4 +1,4 @@
-var counter=3;
+var counter=6;
 function addrow()
 {
     var tbl=document.getElementsByName("firsttable")[0];

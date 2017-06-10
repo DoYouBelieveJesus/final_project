@@ -15,7 +15,16 @@
    <table id="showshop">
         <tbody>
             <tr><th>店名</th><th>位置</th><th>電話</th><th>營業時間</th><th>Rank</th><th>官網/粉絲專業</th></tr>
-            
+            @if($AllShop->count()==0)
+                <tr><td colspan="6">目前沒有資料</td></tr>
+            @else    
+                @foreach($AllShop as $shop)
+                <tr>
+                    <td>{{$shop->name}}</td><td>{{$shop->address}}</td><td>{{$shop->businessFrom}}</td><td>{{$shop->website}}</td><td></td><td></td>
+                </tr>
+                @endforeach
+
+            @endif
         </tbody>
    </table>
 
