@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/shop">目前店家</a></li>
-                <li><a href="/import">輸入店家</a></li>
+                <li><a href="/importshop">輸入店家</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="{{ url('/register') }}">register</a></li>
                 <li><a href="{{ url('/login') }}">login</a></li>

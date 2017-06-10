@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ImportController extends Controller
 {
-    public function import(Request $request)
+    public function importshop(Request $request)
     {
         $timefrom = $request->hourfrom . ':' . $request->minfrom . ':00';
         $timeto = $request->hourto . ':' . $request->minto . ':00';
@@ -29,7 +29,7 @@ class ImportController extends Controller
             $mealtype = $mealtype + 8;
         }
 
-
+       
 
 
         DB::table('shops')->insert(
@@ -43,17 +43,28 @@ class ImportController extends Controller
             ]
         );
 
-//        $foodset = [];
-//        foreach ($request->food as $food)
-//        {
-//            $foodset[] = [
-//                'name' => $food['name'],
-//                'price' => $food['price'],
-//                'mealtype' => $mealtype,
-//
-//            ];
-//        }
-//        DB::table('meals')->insert($foodset);
+        return redirect('/importfood');
+    }
+    public function importfood(Request $request)
+    {
+        $shopid=DB::table('shops')->max('id');
+        $shop=DB::table('shops')->select('mealtype')->where('id',$shopid)->first();
+        $mealtype=$shop->mealtype;
+        $foodset = [];
+        foreach ($request->food as $food)
+        {
+                if(!is_null($food['name']))
+                {
+                 $foodset[] = [
+                'name' => $food['name'],
+                'price' => $food['price'],
+                'mealtype' => $mealtype,
+                'seller' => $shopid
+
+            ];
+        }
+        }
+        DB::table('meals')->insert($foodset);
         return redirect('/');
     }
 }

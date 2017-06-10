@@ -21,10 +21,14 @@ Route::get('/shop','showshopcontroller@showshop');
 Route::get('/aboutshop',function() {
     return view('shopinformation');
 });
-Route::get('/import',function() {
+Route::get('/importshop',function() {
     return view('importshop');
 });
-Route::post('/import/result' , 'ImportController@import'  );
+Route::get('/importfood',function(){
+    return view('importfood');
+});
+Route::post('/importshop/result' , 'ImportController@importshop'  );
+Route::post('/importfood/result' , 'ImportController@importfood'  );
 
 
 Auth::routes();

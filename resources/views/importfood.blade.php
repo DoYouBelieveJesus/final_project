@@ -18,7 +18,7 @@
 <div class="col-xs-offset-4  col-xs-4">
     <table id="importshopselector" align="center" name="firsttable">
     <tbody name="firsttbody">
-    <form action="{{url('/import/result')}}"  method="POST" id="importfood" enctype="multipart/form-data">
+    <form action="{{url('/importfood/result')}}"  method="POST" id="importfood" enctype="multipart/form-data">
         {{ csrf_field() }}
         </form>
     <col width="20%">
