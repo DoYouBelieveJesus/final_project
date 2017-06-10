@@ -17,7 +17,8 @@
                 <li><a href="/shop">目前店家</a></li>
                 <li><a href="/import">輸入店家</a></li>
                 <li><a href="/about">About Us</a></li>
-
+                <li><a href="{{ url('/register') }}">register</a></li>
+                <li><a href="{{ url('/login') }}">login</a></li>
                 {{--<li class="dropdown">--}}
                     {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Member <span class="caret"></span></a>--}}
                     {{--<ul class="dropdown-menu" role="menu">--}}

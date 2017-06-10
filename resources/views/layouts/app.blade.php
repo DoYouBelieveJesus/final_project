@@ -43,7 +43,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        &nbsp;<li><a href="/shop">目前店家</a></li>
+                        <li><a href="/import">輸入店家</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

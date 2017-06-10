@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body class="fluid-container">
- @include('layout.navbar')
+
  <div class="col-md-offset-4 col-md-4">
 <h1>店家名稱</h1>
 <table id="commentcontainer">
