@@ -12,7 +12,7 @@
 <body class="fluid-container">
 @include('layout.navbar')
 
-   <table id="showshop">
+   <table id="showshop" class="table table-hover">
         <tbody>
             <tr><th>店名</th><th>位置</th><th>電話</th><th>營業時間</th><th>Rank</th><th>官網/粉絲專業</th></tr>
             @if($AllShop->count()==0)

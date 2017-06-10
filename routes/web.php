@@ -19,7 +19,7 @@ Route::get('/', function () {
 });*/
 Route::get('/shop','showshopcontroller@showshop');
 Route::get('/aboutshop',function() {
-    return view('importfood');
+    return view('shopinformation');
 });
 Route::get('/import',function() {
     return view('importshop');
