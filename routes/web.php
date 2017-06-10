@@ -25,3 +25,7 @@ Route::get('/import',function() {
 });
 Route::post('/import/result' , 'ImportController@import'  );
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
