@@ -23,5 +23,5 @@ Route::get('/aboutshop',function() {
 Route::get('/import',function() {
     return view('importshop');
 });
-
+Route::post('/import/result' , 'ImportController@import'  );
 
