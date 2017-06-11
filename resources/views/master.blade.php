@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> sds </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{{'css/home.css'}}" type="text/css">
+@extends('layouts.app')
 
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body>
-@include('layout.navbar')
+@section('content')
 <div class="container">
     <div class="content">
         <div class="title">Hunger Game</div>
@@ -24,5 +14,4 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+@endsection

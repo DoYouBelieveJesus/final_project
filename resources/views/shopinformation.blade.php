@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> sds </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/home.css')}}" type="text/css">
+@extends('layouts.app')
 
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body class="fluid-container">
- @include('layout.navbar')
+@section('content')
  <div class="col-md-offset-3 col-md-6">
 <table id="commentcontainer" class="table table-bordered">
     <tbody>
@@ -51,5 +41,4 @@
      </tbody>
 </table>
 </div>
-</body>
-</html>
+@endsection

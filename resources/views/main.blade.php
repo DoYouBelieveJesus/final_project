@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> sds </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{{'css/home.css'}}" type="text/css">
+@extends('layouts.app')
 
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body class="fluid-container">
-@include('layout.navbar')
-       <table class="searchbarcontainer">
+@section('content')
+
+    <table class="searchbarcontainer">
         <tbody>
         <tr><td>Just Eat</td></tr>
         <tr><td>
@@ -34,5 +25,4 @@
             <table>
 
 
-</body>
-</html>
+@endsection

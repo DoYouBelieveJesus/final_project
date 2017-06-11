@@ -12,7 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{'css/home.css'}}" type="text/css">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -49,7 +51,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href={{url('shop')}}>目前店家</a></li>
-                        <li><a href={{url('import')}}>輸入店家</a></li>
+                        <li><a href={{url('importshop')}}>輸入店家</a></li>
                         <li><a href="/about">About Us</a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
