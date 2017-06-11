@@ -19,7 +19,7 @@ Route::get('/', function () {
 });*/
 Route::get('/shop','showshopcontroller@showshop');
 Route::get('/aboutshop',function() {
-    return view('shopinformation');
+    return view('test');
 });
 Route::get('/importshop',function() {
     return view('importshop');
@@ -27,7 +27,7 @@ Route::get('/importshop',function() {
 Route::get('/importfood',function(){
     return view('importfood');
 });
-Route::get('/shop/{shopid}','showshopcontroller@showshopdetial');
+Route::get('/shop/{shop}','showshopcontroller@showshopdetial');
 
 Route::post('/importshop/result' , 'ImportController@importshop'  );
 Route::post('/importfood/result' , 'ImportController@importfood'  );

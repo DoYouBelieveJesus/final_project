@@ -2,9 +2,9 @@
 <html>
 <head>
     <title> sds </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{{'css/home.css'}}" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/home.css')}}" type="text/css">
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -12,27 +12,32 @@
 <body class="fluid-container">
  @include('layout.navbar')
  <div class="col-md-offset-3 col-md-6">
-<table id="commentcontainer">
+<table id="commentcontainer" class="table table-bordered">
     <tbody>
-        <col width="10%"><col width="35%"><col width"55%">
-        <tr><th colspan="3"><h1>店家名稱</h1></th></tr>
-        <tr><td>食物排行</td><td><td rowspan="4"></td></tr>
-        <tr><td>營業時間</td><td></td></tr>
-        <tr><td>電話</td><td></td></tr>
-        <tr><td>喜歡人數</td><td></td></tr>
-        <tr><td class="active" colspan="3">留言</td></tr>
+       <col width="15%"><col width="35%"> <col width="15%"><col width="35%">
+        <tr><th colspan="4"><h1>{{$Shop->name}}</h1></th></tr>     
+        <tr><td>營業時間</td><td>{{$Shop->businessFrom}}~{{$Shop->businessTo}}</td><td>電話</td><td>{{$Shop->telephone}}</td></tr>
+         <tr><td>食物排行</td><td colspan="3">abc</td></tr>
+        <tr><td>位置</td><td colspan="3">{{$Shop->address}}</td></tr>
+        <tr><td>喜歡人數</td><td colspan="3"><button class="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+</button></td></tr>
+        
+    </tbody>
+</table>
+<table id="commentcontainer" class="table table">
+    <tbody>
+       <col width="10%"><col width="35%"><col width="55%">
+        <tr><td colspan="3">留言</td></tr>
+    
         @for($i=0;$i<3;$i++)
     
-        <tr><td colspan="3"  class="table-danger">留言者</td></tr>
-        <tr><td colspan="3" class="table-successs" style="height:70px">comment</td></tr>
-        <tr><td colspan="3">time</td></tr>
+        <tr rowspan="3"><td colspan="3">留言者 <br>
+            comment <br>time</tr>
         @endfor
-        <tr><td colspan="3">留言</td></tr>
-        <tr>
             <td colspan="3">
                  <form action="" type="post" id="comment" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                <textarea name="commentword"></textarea>
+                <textarea name="commentword" placeholder="留些甚麼..."></textarea>
                 </form>
             
             </td>
