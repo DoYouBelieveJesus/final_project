@@ -26,7 +26,7 @@
     <tr><th colspan="2">店家資訊</th></tr>
     <tr><td>店名</td><td><input type="text" form="importshop" name="shopname"></td></tr>
     <tr><td>電話</td><td><input type="text" form="importshop" name="telephone"></td></tr>
-    <tr><td>住址</td><td><input type="text" form="importshop"></td></tr>
+    <tr><td>住址</td><td><input type="text" form="importshop" name="address"></td></tr>
     <tr><td>營業時間</td><td><input type="number" name="hourfrom" min="0" max="24" form="importshop">
             :<input type="number" name="minfrom" min="0" max="60" form="importshop">
             ~<input type="number" name="hourto" min="0" max="24" form="importshop">

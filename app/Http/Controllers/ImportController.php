@@ -12,31 +12,102 @@ class ImportController extends Controller
         $timefrom = $request->hourfrom . ':' . $request->minfrom . ':00';
         $timeto = $request->hourto . ':' . $request->minto . ':00';
         $mealtype = 0;
-        if($request->hourfrom >= 6 and $request->hourfrom < 11)
+        $businesstimefrom=$request->hourfrom;
+        $businesstimeto=$request->hourto;
+        if($businesstimefrom>$businesstimeto)
+        {
+            $businesstime=24+$businesstimeto-$businesstimefrom;
+        }
+        else
+        {
+            $businesstime=$businesstimeto-$businesstimefrom;
+        }
+
+        if($businesstimefrom >= 6 and  $businesstimefrom < 11)
         {
             $mealtype = $mealtype + 1;
+            $businesstime=$businesstime-5;
+            if($businesstime>=0)
+            {
+                 $mealtype=$mealtype+2;
+                 $businesstime=$businesstime-6;
+                 if($businesstime>=0)
+                 {
+                     $mealtype=$mealtype+4;
+                     $businesstime=$businesstime-4;
+                      if($businesstime>=0)
+                      {
+                            $mealtype=$mealtype+8;
+                      }
+                 }
+
+
+            }     
         }
-        if($request->hourfrom >= 11 and $request->hourfrom < 17)
+        if( $businesstimefrom >= 11 and  $businesstimefrom < 17)
         {
-            $mealtype = $mealtype + 3;
+            $mealtype = $mealtype + 2;
+            $businesstime=$businesstime-6;
+            if($businesstime>=0)
+            {
+                 $mealtype=$mealtype+4;
+                 $businesstime=$businesstime-4;
+                 if($businesstime>=0)
+                 {
+                     $mealtype=$mealtype+8;
+                     $businesstime=$businesstime-9;
+                      if($businesstime>=0)
+                      {
+                            $mealtype=$mealtype+1;
+                      }
+                 }
+            }
         }
-        if($request->hourfrom >= 17 and $request->hourfrom < 21)
+        if( $businesstimefrom >= 17 and  $businesstimefrom < 21)
         {
             $mealtype = $mealtype + 4;
+            $businesstime=$businesstime-4;
+            if($businesstime>=0)
+            {
+                 $mealtype=$mealtype+8;
+                 $businesstime=$businesstime-9;
+                 if($businesstime>=0)
+                 {
+                     $mealtype=$mealtype+1;
+                     $businesstime=$businesstime-5;
+                      if($businesstime>=0)
+                      {
+                            $mealtype=$mealtype+2;
+                      }
+                 }
+            }
         }
-        if($request->hourfrom >= 21 or $request->hourfrom < 6)
+        if( ($businesstimefrom >= 21 and $businesstimefrom <24) or ($businesstimefrom>=0 and $businesstimefrom < 6))
         {
             $mealtype = $mealtype + 8;
+            $businesstime=$businesstime-9;
+            if($businesstime>=0)
+            {
+                 $mealtype=$mealtype+1;
+                 $businesstime=$businesstime-5;
+                 if($businesstime>=0)
+                 {
+                     $mealtype=$mealtype+2;
+                     $businesstime=$businesstime-6;
+                      if($businesstime>=0)
+                      {
+                            $mealtype=$mealtype+4;
+                      }
+                 }
+            }
         }
-
-       
-
 
         DB::table('shops')->insert(
             [
                 'name' => $request->shopname,
                 'telephone' => $request->telephone,
-                'address' => $request->telephone,
+                'address' => $request->address,
+                'website'=> $request->website,
                 'businessFrom' => $timefrom,
                 'businessTo' => $timeto,
                 'mealtype' => $mealtype,
@@ -62,7 +133,7 @@ class ImportController extends Controller
                 'seller' => $shopid
 
             ];
-        }
+            }
         }
         DB::table('meals')->insert($foodset);
         return redirect('/');

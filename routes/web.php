@@ -27,6 +27,8 @@ Route::get('/importshop',function() {
 Route::get('/importfood',function(){
     return view('importfood');
 });
+Route::get('/shop/{shopid}','showshopcontroller@showshopdetial');
+
 Route::post('/importshop/result' , 'ImportController@importshop'  );
 Route::post('/importfood/result' , 'ImportController@importfood'  );
 

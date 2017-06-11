@@ -11,7 +11,7 @@
 </head>
 <body class="fluid-container">
 @include('layout.navbar')
-
+<div class="col-md-offset-1 col-md-10">
    <table id="showshop" class="table table-hover">
         <tbody>
             <tr><th>店名</th><th>位置</th><th>電話</th><th>營業時間</th><th>Rank</th><th>官網/粉絲專業</th></tr>
@@ -20,13 +20,13 @@
                 @else   
                 @foreach($AllShop as $shop)
                 <tr>
-                        <td>{{$shop->name}}</td><td>{{$shop->address}}</td><td>{{$shop->businessFrom}}</td><td>{{$shop->website}}</td><td></td><td></td>
+                        <td>{{$shop->name}}</td><td>{{$shop->address}}</td><td>{{$shop->telephone}}</td><td>{{$shop->businessFrom}}~{{$shop->businessTo}}</td><td></td><td>{{$shop->website}}</td>
                 </tr>
                 @endforeach
 
              @endif
         </tbody>
    </table>
-
+</div>
 </body>
 </html>
