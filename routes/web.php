@@ -32,6 +32,7 @@ Route::get('/shop/{shop}','showshopcontroller@showshopdetial');
 
 Route::post('/importshop/result' , 'ImportController@importshop'  );
 Route::post('/importfood/result' , 'ImportController@importfood'  );
+Route::post('/comment/{shop}' , 'CommentController@upload_comment');
 
 
 Auth::routes();

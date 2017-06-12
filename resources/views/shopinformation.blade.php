@@ -25,9 +25,10 @@
             comment <br>time</tr>
         @endfor
             <td colspan="3">
-                 <form action="" type="post" id="comment" enctype="multipart/form-data">
+                 <form action="/comment/{{$Shop->name}}" method="post" id="comment" enctype="multipart/form-data" >
                     {{ csrf_field() }}
-                <textarea name="commentword" placeholder="留些甚麼..."></textarea>
+
+                <textarea name="commentword" placeholder="留些甚麼..." required autofocus></textarea>
                 </form>
             
             </td>
