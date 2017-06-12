@@ -32,9 +32,9 @@ Route::get('/shop/{shop}','showshopcontroller@showshopdetial');
 
 Route::post('/importshop/result' , 'ImportController@importshop'  );
 Route::post('/importfood/result' , 'ImportController@importfood'  );
-Route::post('/comment/{shop}' , 'CommentController@upload_comment');
-
-
+Route::post('/shop/comment/{shop}' , 'CommentController@upload_comment');
+Route::post('/shop/{shop}/food/{meal}/like/result','LikeController@foodlike');
+Route::post('/shop/{shop}/like/result','LikeController@shoplike');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

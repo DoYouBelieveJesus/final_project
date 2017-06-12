@@ -9,27 +9,40 @@
         <tr><td>營業時間</td><td>{{$Shop->businessFrom}}~{{$Shop->businessTo}}</td><td>電話</td><td>{{$Shop->telephone}}</td></tr>
          <tr><td>食物排行</td><td colspan="3"><a href="/shop/{{$Shop->id}}/meal">more...</a><td></tr>
         <tr><td>位置</td><td colspan="3">{{$Shop->address}}</td></tr>
-        <tr><td>喜歡人數</td><td colspan="3"><button class="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-</button></td></tr>
-        
+        <tr><td>喜歡人數</td><td colspan="3">
+                    <form action="/shop/{{$Shop->id}}/like/result" id="likeshop" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    {{$shoplikenum}}
+                    @if($userlikes==1)
+                    
+              
+                    <button type="submit" name="loveheart" value="1" class="redbutton" style="color:red" form="likeshop"><span class="glyphicon glyphicon-heart" aria-hidden="true"></button>
+                    @elseif($userlikes==0)
+                    <button type="submit" name="cancelheart" value="0" class="redbutton" style="color:black" form="likeshop"><span class="glyphicon glyphicon-heart" aria-hidden="true"></button>
+                   
+                    @endif
+                </form>
+                </td></tr>
     </tbody>
 </table>
 <table id="commentcontainer" class="table table">
     <tbody>
+    
+
        <col width="10%"><col width="35%"><col width="55%">
         <tr><td colspan="3">留言</td></tr>
     
-        @for($i=0;$i<3;$i++)
+        @foreach($shopcomments as $shopcomment)
     
-        <tr rowspan="3"><td colspan="3">留言者 <br>
-            comment <br>time</tr>
-        @endfor
+        <tr rowspan="3"><td colspan="3">{{$shopcomment->commenter}} <br>
+           {{$shopcomment->comment}} <br>{{$shopcomment->time}}</tr>
+        @endforeach
             <td colspan="3">
-                 <form action="/comment/{{$Shop->name}}" method="post" id="comment" enctype="multipart/form-data" >
+                 <form action="/shop/comment/{{$Shop->id}}" method="POST" id="comment" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                <textarea name="commentword" placeholder="留些甚麼..." required autofocus></textarea>
-                </form>
+                <textarea name="commentword" placeholder="留些甚麼..." form="comment" required autofocus></textarea>
+               
             
             </td>
 
@@ -38,7 +51,9 @@
                 <td colspan="3" style="text-align:right">
                     <input type="submit" value="留言" form="comment">
                 </td>
+</form>
         </tr>
+                
      </tbody>
 </table>
 </div>
