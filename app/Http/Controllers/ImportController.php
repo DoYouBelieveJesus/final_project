@@ -9,6 +9,11 @@ class ImportController extends Controller
 {
     public function importshop(Request $request)
     {
+        //die("$request->canclebutton");
+        if(is_null($request->cancelbutton))
+        {
+        
+        
         $timefrom = $request->hourfrom . ':' . $request->minfrom . ':00';
         $timeto = $request->hourto . ':' . $request->minto . ':00';
         $mealtype = 0;
@@ -114,10 +119,19 @@ class ImportController extends Controller
             ]
         );
 
-        return redirect('/importfood');
+            return redirect('/importfood');
+        }
+        else 
+        {
+            return redirect('/shop');
+        }
     }
     public function importfood(Request $request)
     {
+        if(is_null($request->cancelbutton))
+        {
+           
+        
         $shopid=DB::table('shops')->max('id');
         $shop=DB::table('shops')->select('mealtype')->where('id',$shopid)->first();
         $mealtype=$shop->mealtype;
@@ -137,6 +151,10 @@ class ImportController extends Controller
             }
         }
         DB::table('meals')->insert($foodset);
+         
+        }
         return redirect('/');
     }
+
+   
 }

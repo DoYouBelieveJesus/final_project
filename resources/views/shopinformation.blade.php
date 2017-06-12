@@ -7,7 +7,7 @@
        <col width="15%"><col width="35%"> <col width="15%"><col width="35%">
         <tr><th colspan="4"><h1>{{$Shop->name}}</h1></th></tr>     
         <tr><td>營業時間</td><td>{{$Shop->businessFrom}}~{{$Shop->businessTo}}</td><td>電話</td><td>{{$Shop->telephone}}</td></tr>
-         <tr><td>食物排行</td><td colspan="3">abc</td></tr>
+         <tr><td>食物排行</td><td colspan="3"><a href="/shop/{{$Shop->id}}/meal">more...</a><td></tr>
         <tr><td>位置</td><td colspan="3">{{$Shop->address}}</td></tr>
         <tr><td>喜歡人數</td><td colspan="3"><button class="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 </button></td></tr>

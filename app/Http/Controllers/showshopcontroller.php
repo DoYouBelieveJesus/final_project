@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\shop;
+use App\Meal;
 
 class showshopcontroller extends Controller
 {
@@ -19,6 +20,11 @@ class showshopcontroller extends Controller
     {
         return view('shopinformation',['Shop'=>$shop]);
         //die("$shop->name");
+    }
+    public function showfood($shopid)
+    {
+        $shopmeals=DB::table('meals')->where('seller',$shopid)->get();
+        return view('foodinformation',['meals'=>$shopmeals]);
     }
 }
 

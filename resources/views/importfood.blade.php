@@ -31,7 +31,7 @@
         <tbody>
         <col width="50%"><col width="50%">
         <tr>
-                <td><button onclick="window.location='{{URL::to('/shop')}}'" class="addrowbutton">取消</button></td>    
+                <td><input name="cancelbutton" type="submit" class="addrowbutton" value="取消"></td>    
                 <td><input type="submit" class="addrowbutton" value="提交" form="importfood"></td>
         </tr>
         </tbody>                    

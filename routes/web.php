@@ -19,8 +19,9 @@ Route::get('/', function () {
 });*/
 Route::get('/shop','showshopcontroller@showshop');
 Route::get('/aboutshop',function() {
-    return view('test');
+    return view('foodinformation');
 });
+Route::get('/shop/{shop}/meal','showshopcontroller@showfood');
 Route::get('/importshop',function() {
     return view('importshop');
 });
