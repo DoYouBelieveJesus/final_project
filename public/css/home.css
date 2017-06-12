@@ -121,10 +121,21 @@ td.showshop, tr.showshop{
     text-align: center;
     border:none;
 }
-.button {
-    background-color: white;
+.button{
+    background-color: transparent;
     border: none;
     padding:0px;
+}
+.button:focus{
+    outline:0;
+}
+.redbutton{
+    background-color: transparent;
+    border: none;
+    padding: 0px ;
+}
+.redbutton:focus{
+    outline:0;
 }
 .glyphicon.glyphicon-heart{
     font-size:40px;
