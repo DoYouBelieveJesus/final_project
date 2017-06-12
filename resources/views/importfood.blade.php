@@ -3,11 +3,10 @@
 @section('content')
 
 <div class="col-xs-offset-4  col-xs-4">
+<form action="{{url('/importfood/result')}}"  method="POST" id="importfood" enctype="multipart/form-data">
+    {{ csrf_field() }}
     <table id="importshopselector" align="center" name="firsttable">
     <tbody name="firsttbody">
-    <form action="{{url('/importfood/result')}}"  method="POST" id="importfood" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        </form>
     <col width="20%">
     <col width="80%">
     <tr><th colspan="2">食物 <button onclick="addrow()" class="" type="button"  style="float: right;">
@@ -37,5 +36,6 @@
         </tr>
         </tbody>                    
     </table>
+</form>
     </div> 
 @endsection

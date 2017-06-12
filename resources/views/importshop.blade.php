@@ -2,11 +2,10 @@
 
 @section('content')
 <div class="col-xs-offset-4  col-xs-4">
+<form action="{{url('/importshop/result')}}"  method="POST" id="importshop" enctype="multipart/form-data">
     <table id="importshopselector" align="center" name="firsttable">
     <tbody name="firsttbody">
-    <form action="{{url('/importshop/result')}}"  method="POST" id="importshop" enctype="multipart/form-data">
         {{ csrf_field() }}
-        </form>
     <col width="20%">
     <col width="80%">
     <tr><th colspan="2">店家資訊</th></tr>
@@ -31,5 +30,6 @@
         </tr>
         </tbody>                    
     </table>
+    </form>
     </div> 
 @endsection

@@ -126,6 +126,7 @@ class ImportController extends Controller
         {
                 if(!is_null($food['name']))
                 {
+                
                  $foodset[] = [
                 'name' => $food['name'],
                 'price' => $food['price'],
