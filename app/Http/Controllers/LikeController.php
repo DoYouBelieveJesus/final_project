@@ -13,24 +13,35 @@ class LikeController extends Controller
          if(Auth::check())
          {
             $userid=Auth::id();
+                if(!is_null($request->loveheart))
+                {
+                    DB::table('userlikefood')->where('user','=',"$userid")->where('food','=',"$meal")->delete();
+                }
+                else if(!is_null($request->cancelheart))
+                {
+                     DB::table('userlikefood')->insert(
+                    ['user'=>$userid,'food'=>$meal]);
+                }
+                return redirect()->back();
+         }
+         else
+         {
+             $userid=0;
+             return redirect()->back()->with('alert', 'Deleted!');
          }
          
-         if(!is_null($request->loveheart))
-         {
-                DB::table('userlikefood')->where('user','=',"$userid")->where('food','=',"$meal")->delete();
-         }
-         else if(!is_null($request->cancelheart))
-         {
-                DB::table('userlikefood')->insert(
-                    ['user'=>$userid,'food'=>$meal]);
-         }
-         return redirect()->back();
+
+         
      }
      public function shoplike(Request $request,$shop)
      {
          if(Auth::check())
          {
             $userid=Auth::id();
+         }
+         else
+         {
+             $userid=0;
          }
          if(!is_null($request->loveheart))
          {

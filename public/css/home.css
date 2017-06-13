@@ -213,3 +213,47 @@ td.showshop, tr.showshop{
     text-align:center;
 }
 
+#searchresults{
+    padding:40px 0px 20px 0px;
+}
+#searchresults td,tr, th{
+     text-align:center;
+}
+#searchresults custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#searchresults input{
+    border: 0;
+    box-shadow: none;
+}
+
+#searchresults searchbutton{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+#searchresults h1{
+    margin:30px 0px;
+}
+
+.btn.pull-right{
+    margin:10px 0px;
+}
+
+#searchresults searchbutton:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#searchresultst .glyphicon-search{
+    font-size: 30px;
+}

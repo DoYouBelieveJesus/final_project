@@ -23,6 +23,10 @@ class showshopcontroller extends Controller
         {
             $userid=Auth::id();
         }
+        else
+        {
+            $userid=0;
+        }
         $Shopcomment=DB::table('shopcomments')->where('commenter',$userid)->where('shoper',$shop->id)->select('*')->get();
         $ShoplikeNum=DB::table('userlikeshop')->where('userlikeshop.shop',$shop->id)->select(DB::raw('count(*) as likenum'))->get();
         $ShoplikeNums=(int)$ShoplikeNum[0]->likenum;
@@ -36,6 +40,10 @@ class showshopcontroller extends Controller
         if(Auth::check())
         {
             $userid=Auth::id();
+        }
+        else
+        {
+            $userid=0;
         }
         DB::connection()->enableQueryLog();
         $userlike=DB::table('meals as meals1')->where('seller',$shopid)->LeftJoin('userlikefood','meals1.id','=','userlikefood.food')->select('userlikefood.food as foodid')->where('userlikefood.user',$userid)->get();//groupBy('foodid')->get();        //->leftjoin('users','users.id','=','test1.user')->get();//->select('users.id as userid','test1.food as foodid')->where('users.id','=','1')->get();
