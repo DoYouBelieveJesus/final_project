@@ -26,11 +26,7 @@
     <div id="searchresults">
     <table class="table">
     <tbody>
-    <col width="20%">
-    <col width="20%">
-    <col width="20%">
-    <col width="20%">
-    <col width="20%">
+    <col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
     <tr><th colspan="5" style="font-size:25px;">店家資訊</th></tr>
     <tr><th>店名</th><th>住址</th><th>食物類型</th><th>喜歡人數</th><th>more</th></tr>
     @for($i=0;$i<3;$i++)

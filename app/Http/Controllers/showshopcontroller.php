@@ -12,10 +12,12 @@ class showshopcontroller extends Controller
     public function showshop()
     {
          $AllShops=DB::table('shops')->get();
+         $All=DB::table('shops')->leftjoin('userlikeshop','shops.id','userlikeshop.shop')->select(DB::raw('shops.name as name , shops.address as address , shops.mealtype as mealtype , count(userlikeshop.user) as likenum, shops.telephone as telephone, shops.businessFrom, shops.businessTo, shops.website, shops.id'))->groupby('shops.id')->get();
+        // dd($All);
          /*time format*/
           /*$AllShopTime=DB::table('shops')->select(DB::raw("TIME_FORMAT('businessFrom','%h:%i%p')");
           die($AllShopTime);*/
-         return view('showshop',['AllShop'=>$AllShops,'test'=>0]);       
+         return view('showshop',['AllShop'=>$All,'test'=>0]);       
     }
     public function showshopdetial(shop $shop)
     {

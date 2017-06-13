@@ -31,7 +31,7 @@ class ImportController extends Controller
         if($businesstimefrom >= 6 and  $businesstimefrom < 11)
         {
             $mealtype = $mealtype + 1;
-            $businesstime=$businesstime-5;
+            $businesstime=$businesstime-(11-$businesstimefrom);
             if($businesstime>=0)
             {
                  $mealtype=$mealtype+2;
@@ -52,7 +52,7 @@ class ImportController extends Controller
         if( $businesstimefrom >= 11 and  $businesstimefrom < 17)
         {
             $mealtype = $mealtype + 2;
-            $businesstime=$businesstime-6;
+            $businesstime=$businesstime-(17-$businesstimefrom);
             if($businesstime>=0)
             {
                  $mealtype=$mealtype+4;
@@ -71,7 +71,7 @@ class ImportController extends Controller
         if( $businesstimefrom >= 17 and  $businesstimefrom < 21)
         {
             $mealtype = $mealtype + 4;
-            $businesstime=$businesstime-4;
+            $businesstime=$businesstime-(21-$businesstimefrom);
             if($businesstime>=0)
             {
                  $mealtype=$mealtype+8;
@@ -90,7 +90,14 @@ class ImportController extends Controller
         if( ($businesstimefrom >= 21 and $businesstimefrom <24) or ($businesstimefrom>=0 and $businesstimefrom < 6))
         {
             $mealtype = $mealtype + 8;
-            $businesstime=$businesstime-9;
+            if($businesstimefrom<6)
+            {
+                $businesstime=$businesstime-(6-$businesstimefrom);
+            }
+            else
+            {
+                $businesstime=$businesstime-(30-$businesstimefrom);
+            }
             if($businesstime>=0)
             {
                  $mealtype=$mealtype+1;
@@ -153,7 +160,7 @@ class ImportController extends Controller
         DB::table('meals')->insert($foodset);
          
         }
-        return redirect('/');
+        return redirect('/shop');
     }
 
    

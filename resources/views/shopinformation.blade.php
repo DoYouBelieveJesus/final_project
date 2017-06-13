@@ -2,7 +2,8 @@
 
 @section('content')
  <div class="col-md-offset-3 col-md-6">
-<table id="commentcontainer" class="table table-bordered">
+ <div id="commentcontainer">
+<table  class="table table-bordered" id="test">
     <tbody>
        <col width="15%"><col width="35%"> <col width="15%"><col width="35%">
         <tr><th colspan="4"><h1>{{$Shop->name}}</h1></th></tr>     
@@ -14,8 +15,7 @@
                     {{ csrf_field() }}
                     {{$shoplikenum}}
                     @if($userlikes==1)
-                    
-              
+                    <!--留言的人bug-->
                     <button type="submit" name="loveheart" value="1" class="redbutton" style="color:red" form="likeshop"><span class="glyphicon glyphicon-heart" aria-hidden="true"></button>
                     @elseif($userlikes==0)
                     <button type="submit" name="cancelheart" value="0" class="redbutton" style="color:black" form="likeshop"><span class="glyphicon glyphicon-heart" aria-hidden="true"></button>
@@ -25,7 +25,7 @@
                 </td></tr>
     </tbody>
 </table>
-<table id="commentcontainer" class="table table">
+<table class="table table">
     <tbody>
     
 
@@ -34,16 +34,16 @@
     
         @foreach($shopcomments as $shopcomment)
     
-        <tr rowspan="3"><td colspan="3">{{$shopcomment->commenter}} <br>
-           {{$shopcomment->comment}} <br>{{$shopcomment->time}}</tr>
+        <tr rowspan="3">
+            <td colspan="3">
+            <div style="text-align:left">{{$shopcomment->commenter}}<div> 
+         <div class="commentwords" style="text-align:center">  {{$shopcomment->comment}}</div><div  style="text-align:right">{{$shopcomment->time}}</div></tr>
         @endforeach
             <td colspan="3">
                  <form action="/shop/comment/{{$Shop->id}}" method="POST" id="comment" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                <textarea name="commentword" placeholder="留些甚麼..." form="comment" required autofocus></textarea>
-               
-            
+                <textarea name="commentword" placeholder="留些甚麼..." form="comment" required autofocus></textarea>           
             </td>
 
         </tr>
@@ -56,5 +56,6 @@
                 
      </tbody>
 </table>
+</div>
 </div>
 @endsection

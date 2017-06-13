@@ -5,7 +5,7 @@
    <div class="col-xs-offset-3 col-xs-6">
     <table class="searchbarcontainer">
         <tbody>
-        <tr><td>Just Eat</td></tr>
+        <tr><td>Eat is</td></tr>
         <tr><td class="searchbarcontainer">
         <form  action="" method="get"  role="search" > 
             <div class="col-xs-offset-2 col-xs-8">

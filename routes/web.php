@@ -1,4 +1,5 @@
 <?php
+//use App\Http\Middleware\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +12,7 @@
 |
 */
 
+Route::get('/test',function() { return view('searchresult');});
 Route::get('/', function () {
     return view('main');
 });
@@ -21,9 +23,9 @@ Route::get('/shop','showshopcontroller@showshop');
 Route::get('/aboutshop',function() {
     return view('foodinformation');
 });
-Route::get('/test',function() {
+/*Route::get('/test',function() {
     return view('searchresult');
-});
+});*/
 Route::get('/shop/{shop}/meal','showshopcontroller@showfood');
 Route::get('/importshop',function() {
     return view('importshop');
@@ -33,11 +35,11 @@ Route::get('/importfood',function(){
 });
 Route::get('/shop/{shop}','showshopcontroller@showshopdetial');
 
-Route::post('/importshop/result' , 'ImportController@importshop'  );
-Route::post('/importfood/result' , 'ImportController@importfood'  );
-Route::post('/shop/comment/{shop}' , 'CommentController@upload_comment');
-Route::post('/shop/{shop}/food/{meal}/like/result','LikeController@foodlike');
-Route::post('/shop/{shop}/like/result','LikeController@shoplike');
+Route::post('/importshop/result' , 'ImportController@importshop' )->middleware('User');
+Route::post('/importfood/result' , 'ImportController@importfood' )->middleware('User');
+Route::post('/shop/comment/{shop}' , 'CommentController@upload_comment')->middleware('User');
+Route::post('/shop/{shop}/food/{meal}/like/result','LikeController@foodlike')->middleware('User');
+Route::post('/shop/{shop}/like/result','LikeController@shoplike')->middleware('User');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
