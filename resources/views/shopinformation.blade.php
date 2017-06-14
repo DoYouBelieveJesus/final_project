@@ -9,10 +9,10 @@
         <tr><th colspan="4"><h1>{{$Shop->name}}</h1></th></tr>     
         <tr><td>營業時間</td><td>{{$Shop->businessFrom}}~{{$Shop->businessTo}}</td><td>電話</td><td>{{$Shop->telephone}}</td></tr>
          <tr><td>食物排行</td><td colspan="3">
-        <?php $counter=0; ?>
+        <?php $counter=0;?>
         @foreach($shopfoodranks as $shopfoodrank)
                <?php if($counter==3) break; ?>
-               {{ $shopfoodrank->name}}
+                {{$counter+1}}.{{ $shopfoodrank->name}}<br>
                <?php $counter++ ?>
          @endforeach
         <a href="/shop/{{$Shop->id}}/meal">
@@ -45,7 +45,7 @@
     
         <tr rowspan="3">
             <td colspan="3">
-            <div style="text-align:left">{{$shopcomment->commenter}}<div> 
+            <div style="text-align:left">{{$shopcomment->name}}<div>
          <div class="commentwords" style="text-align:center">  {{$shopcomment->comment}}</div><div  style="text-align:right">{{$shopcomment->time}}</div></tr>
         @endforeach
             <td colspan="3">

@@ -2,7 +2,7 @@
 
 @section('content')
 
-   <div class="col-xs-offset-3 col-xs-6">
+   <div class="col-xs-offset-2 col-xs-8">
     <table class="searchbarcontainer">
         <tbody>
         <tr><td>Eat is</td></tr>

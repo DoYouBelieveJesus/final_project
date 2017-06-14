@@ -31,8 +31,8 @@ class ImportController extends Controller
         {
         
         
-        $timefrom = $request->hourfrom . ':' . $request->minfrom . ':00';
-        $timeto = $request->hourto . ':' . $request->minto . ':00';
+        $timefrom = $request->hourfrom . ':' . $request->minfrom;
+        $timeto = $request->hourto . ':' . $request->minto;
         $mealtype = 0;
         $businesstimefrom=$request->hourfrom;
         $businesstimeto=$request->hourto;
