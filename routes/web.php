@@ -12,7 +12,7 @@
 |
 */
 
-Route::get('/test',function() { return view('searchresult');});
+Route::get('/searchresult',function() { return view('searchresult');});
 Route::get('/', function () {
     return view('main');
 });
@@ -43,3 +43,5 @@ Route::post('/shop/{shop}/like/result','LikeController@shoplike')->middleware('U
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/search' , 'searchresult@show');

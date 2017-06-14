@@ -25,16 +25,16 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">--}}
+                        {{--<span class="sr-only">Toggle Navigation</span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                    {{--</button>--}}
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -44,15 +44,15 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                    {{--<ul class="nav navbar-nav">--}}
+                        {{--&nbsp;--}}
+                    {{--</ul>--}}
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href={{url('shop')}}>目前店家</a></li>
                         <li><a href={{url('importshop')}}>輸入店家</a></li>
-                        <li><a href="/aboutshop">About Us</a></li>
+                        {{--<li><a href="/aboutshop">About Us</a></li>--}}
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
