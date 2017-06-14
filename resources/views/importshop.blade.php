@@ -18,6 +18,20 @@
             :<input type="number" name="minto" min="0" max="60" form="importshop">
     </td></tr>
     <tr><td>粉專/官網</td><td><input type="text" name="website" form="importshop"></td></tr>
+    @if(count($errors) > 0)
+    <tr><td colspan="2">
+    <div class="col-xs-offset-3  col-xs-6">
+        <div class="alert alert-warning">
+    <strong>@if($errors->has('shopname'))
+            {{$errors->first('shopname')}}      
+            @elseif($errors->has('hourfrom')||$errors->has('hourto')||$errors->has('minfrom')||$errors->has('minto'))
+            {{$errors->first('hourfrom')}}
+            @elseif($errors->has('website'))
+            {{$errors->first('website')}}
+            @endif</strong>
+            </div>
+           </div> </td></tr>
+    @endif
     </tbody>
 </table>
     <table id="importshopselector">

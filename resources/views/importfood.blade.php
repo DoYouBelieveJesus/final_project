@@ -30,6 +30,18 @@
     <table id="importshopselector">
         <tbody>
         <col width="50%"><col width="50%">
+        @if(count($errors) > 0)
+     <tr><td colspan="2"><div class="col-xs-offset-3  col-xs-6">
+        <div class="alert alert-warning">
+    <strong>
+        
+            @if($errors->has("food[0]['name']"))
+            {{$errors->first("food[0]['name']")}}  
+            @endif</strong>
+            </div>
+           </div>
+          </td> </tr>
+          @endif
         <tr>
                 <td><input name="cancelbutton" type="submit" class="addrowbutton" value="取消"></td>    
                 <td><input type="submit" class="addrowbutton" value="提交" form="importfood"></td>

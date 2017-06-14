@@ -8,7 +8,16 @@
        <col width="15%"><col width="35%"> <col width="15%"><col width="35%">
         <tr><th colspan="4"><h1>{{$Shop->name}}</h1></th></tr>     
         <tr><td>營業時間</td><td>{{$Shop->businessFrom}}~{{$Shop->businessTo}}</td><td>電話</td><td>{{$Shop->telephone}}</td></tr>
-         <tr><td>食物排行</td><td colspan="3"><a href="/shop/{{$Shop->id}}/meal">more...</a><td></tr>
+         <tr><td>食物排行</td><td colspan="3">
+        <?php $counter=0; ?>
+        @foreach($shopfoodranks as $shopfoodrank)
+               <?php if($counter==3) break; ?>
+               {{ $shopfoodrank->name}}
+               <?php $counter++ ?>
+         @endforeach
+        <a href="/shop/{{$Shop->id}}/meal">
+         more...
+         </a></td></tr>
         <tr><td>位置</td><td colspan="3">{{$Shop->address}}</td></tr>
         <tr><td>喜歡人數</td><td colspan="3">
                     <form action="/shop/{{$Shop->id}}/like/result" id="likeshop" method="POST" enctype="multipart/form-data">

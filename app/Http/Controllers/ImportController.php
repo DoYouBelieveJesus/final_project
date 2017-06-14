@@ -10,6 +10,23 @@ class ImportController extends Controller
     public function importshop(Request $request)
     {
         //die("$request->canclebutton");
+        $messages = [
+            'shopname.required' => '該輸入店名ㄅ',
+            'hourto.required'=> '要輸入營業時間喔',
+            'hourfrom.required'=> '要輸入營業時間喔',
+            'minto.required'=> '要輸入營業時間喔',
+            'minfrom.required'=> '要輸入營業時間喔',                        
+            'website.url'=>'輸入的網站怪怪ㄟ'
+        ];
+        $this->validate($request, [
+        'shopname' => 'required',
+        'hourto' => 'required',
+        'hourfrom' => 'required',
+        'minto'=>'required',
+        'minfrom' =>'required',
+        'website'=> 'nullable|url'
+        ], $messages);
+       // dd($errors[0]);
         if(is_null($request->cancelbutton))
         {
         
@@ -135,10 +152,25 @@ class ImportController extends Controller
     }
     public function importfood(Request $request)
     {
-        if(is_null($request->cancelbutton))
+        $counter=0;
+        foreach ($request->food as $food)
         {
-           
-        
+            if(!is_null($food['name']))
+            {
+               // dd("test");
+                $counter++;
+            }
+           // dd($request->food);
+        }    
+        if($counter==0)
+        {
+                    //dd("abc");
+                    //die("$request->canclebutton");
+           // dd($request->food[0]['name']);
+            $messages = ["food[0]['name'].required" => '該輸入食物ㄅ'];
+            $this->validate($request, ["food[0]['name']"=>'required'], $messages);
+        }
+
         $shopid=DB::table('shops')->max('id');
         $shop=DB::table('shops')->select('mealtype')->where('id',$shopid)->first();
         $mealtype=$shop->mealtype;
@@ -159,7 +191,7 @@ class ImportController extends Controller
         }
         DB::table('meals')->insert($foodset);
          
-        }
+        
         return redirect('/shop');
     }
 

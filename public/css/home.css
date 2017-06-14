@@ -60,6 +60,7 @@ td.showshop, tr.showshop{
     font-size: 30px;
 }
 
+
 /*.gameLotto{
      border-style: solid;
      border-width: 2px;
@@ -135,12 +136,20 @@ td.showshop, tr.showshop{
    width:100%;
    text-align:center;
 }
-#importshopselector th{
+#importshopselector th, #importshopselector td{
     height:50px;
     font-size:15px;
     text-align: center;
     border:none;
 }
+#importshopselector .alert.alert-warning{
+        width:100%;
+        padding:0;
+}
+#importshopselector .alert{
+    margin-bottom: 0;
+}
+
 .button{
     background-color: transparent;
     border: none;
