@@ -30,10 +30,11 @@ class showshopcontroller extends Controller
             $userid=0;
         }
         $Shopcomment=DB::table('shopcomments')
-            ->join('users' , 'users.id', '=' , 'shopcomments.shoper')
-            ->where('commenter',$userid)
+            ->join('users' , 'users.id', '=' , 'shopcomments.commenter')
+            //->where('commenter',$userid)
             ->where('shoper',$shop->id)
             ->select('*')
+            ->orderby('time','asc')
             ->get();
 //        dd($Shopcomment);
         $ShoplikeNum=DB::table('userlikeshop')->where('userlikeshop.shop',$shop->id)->select(DB::raw('count(*) as likenum'))->get();

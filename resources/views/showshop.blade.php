@@ -33,7 +33,7 @@
                                  消夜
                             @endif
                             </td>
-                            <td>{{$shop->likenum}}</td><td><a href="{{$shop->website}}">{{$shop->website}}<a></td><td><a href="/shop/{{$shop->id}}">more...</a></td>
+                            <td>{{$shop->likenum}}</td><td><a href="{{$shop->website}}">{{$shop->website}}<a></td><td><a href="shop/{{$shop->id}}">more...</a></td>
                 </tr>
                 @endforeach
                 <tr><td></td></tr>
